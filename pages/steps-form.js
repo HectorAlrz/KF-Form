@@ -80,10 +80,18 @@ export default function FormikForm() {
             return
         }
         setCurrentPage((prev) => prev + 1)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
     }
 
     const handlePrevStep = (newData) => {
         setData((prev) => ({ ...prev, ...newData }));
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
         setCurrentPage((prev) => prev - 1);
     };
 

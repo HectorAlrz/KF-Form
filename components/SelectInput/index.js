@@ -18,9 +18,9 @@ const SelectInput = ({ label, ...props }) => {
         {...field}
         {...props}
       />
-      {meta.touched && meta.error ? (
-        <div className='error'>{meta.error}</div>
-      ) : null}
+      {(meta.touched && meta.error) && (
+        <div className='top-12 mt-1 text-white bg-red-500 text-center rounded'>{meta.error}</div>
+      )}
     </div>
   )
 }

@@ -39,7 +39,7 @@ export const formOneSchema = Yup.object({
       ])
       .required('Se necesita el régimen fiscal.'),
     
-      industria: Yup.string()
+    industria: Yup.string()
       .min(5, 'El campo debe contener al menos 5 caracteres.')
       .required('Se debe ingresar la industria.'),
     
@@ -125,7 +125,7 @@ export const formOneSchema = Yup.object({
         .required('Se necesita el régimen fiscal.'),
       
       fechaDeNacimiento: Yup.date()
-        .max(new Date(new Date().setDate(new Date().getDate()-6570)),'Debe ser mayor de edad')
+        .max(new Date(new Date().setDate(new Date().getDate() - 6570)),'Debe ser mayor de edad')
         .required('Este campo es obligatorio.'),
 
       entidadFederativaDeNacimiento: Yup.string()
@@ -158,3 +158,76 @@ export const formOneSchema = Yup.object({
         .required('Este campo es necesario'),
     })
   })
+
+  export const formFourSchema = Yup.object({
+      
+    representanteLegal: Yup.object().shape({
+
+        domicilio: Yup.object().shape({
+
+          calle: Yup.string()
+          .min(3,'La calle debe contener al menos 5 caracteres')
+          .max(50,'La calle debe contener como máximo 50 caracteres')
+          .required('Este campo es obligatorio'),
+
+          numeroExterior: Yup.string()
+          .required('El número es necesario')
+          .min(1,'Ingresa al menos un digito')
+          .matches(
+            /^[0-9]*$/,
+          'Introduce solo números'
+          ),
+
+        numeroInterior: Yup.string()
+        .min(1,'introduce al menos un digito')
+        .matches(
+        /^[0-9]*$/,
+        'Introduce solo números'
+      ),
+
+        codigoPostal: Yup.string()
+          .required('Este campo es obligatorio')
+          .matches(
+          /^[0-9]*$/,
+          'Introduce solo números'
+        ),
+
+        colonia: Yup.string()
+          .min(5,'La colonia debe contener al menos 5 caracteres')
+          .max(50,'La colonia debe contener como máximo 50 caracteres')
+          .required('Este campo es obligatorio'),
+        
+        ciudad: Yup.string()
+          .min(5,'La ciudad debe contener al menos 5 caracteres')
+          .max(25,'La ciudad debe contener como máximo 25 caracteres')
+          .required('Este campo es obligatorio'),
+        
+        estado: Yup.string()
+          .min(5,'Este campo debe contener al menos 5 caracteres')
+          .max(25,'Este campo debe contener como máximo')
+          .required('Este campo es obligatorio'),
+
+        pais: Yup.string()
+          .min(5,'Este campo debe contener al menos 5 caracteres')
+          .max(25,'Este campo debe contener como máximo')
+          .required('Este campo es obligatorio'),
+        })
+    })
+  })
+
+  export const finalForm = Yup.object({
+    representanteLegal: Yup.object().shape({
+
+      clabe: Yup.string()
+        .min(18,'La CLABE debe contener al menos 18 caracteres')
+        .max(18,'La CLABE debe contener como máximo 18 caracteres')
+        .required('Este campo es obligatorio'),
+      
+      banco: Yup.string()
+        .min(3,'Este campo necesita 3 caracteres o más')
+        .max(50,'ximo 50 caracteres')
+        .required('Este campo es obligatorio'),
+
+      })
+  })
+  

@@ -4,7 +4,7 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 
 // .: Form Schema
-import { formSchema } from '../../pages/api/validations'
+import { formFourSchema } from '../../pages/api/validations'
 
 // .: Components
 import DataInput from '../../components/DataInput'
@@ -19,7 +19,7 @@ export default function FormFour({ next, prev, data }) {
         <Formik
             initialValues={data}
             /* Validation Schema using Yup */
-            validationSchema={formSchema}
+            validationSchema={formFourSchema}
 
             onSubmit={handlerSubmit}
         >
