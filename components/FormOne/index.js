@@ -4,23 +4,22 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 
 // .: Form Schema
-import { formSchema } from '../../pages/api/validations'
+import { formOneSchema } from '../../pages/api/validations'
 
 // .: Components
 import DataInput from '../../components/DataInput'
-
+import SelectInput from '../SelectInput'
 
 
 export default function FormOne({next, data}) {
     const handlerSubmit = (values) => {
         next(values)
     }
-
     return (
         <Formik
                 initialValues={data}
                 /* Validation Schema using Yup */
-                validationSchema={formSchema}
+                validationSchema={formOneSchema}
 
                 onSubmit={handlerSubmit}
             >
@@ -33,12 +32,14 @@ export default function FormOne({next, data}) {
                                 <h3 className=' text-center text-2xl'>Datos de Empresa</h3>
                             </div>
 
-                            <DataInput
-                                label='Razón Social'
-                                name='razonSocial'
-                                type='text'
-                                placeholder='Sociedad Anónima S.A.'
-                            />
+                            <SelectInput label='Razón socal' name='razonSocial'>
+                                <option value=''>Selecciona una razón social</option>
+                                <option value='sociedadAnonima'>Sociedad Anónima S.A.</option>
+                                <option value='sociedadDeResponsabilidadLimitada'>Sociedad de Responsabilidad Limitada S. de R.L.</option>
+                                <option value='sociedadComanditaAcciones'>Sociedad en Comandita por Acciones S. en C. por A.</option>
+                                <option value='sociedadComanditaSimple'>Sociedad en Comandita Simple S. en C.S.</option>
+                                <option value='sociedadDeNombreColectivo'>Sociedad en Nombre Colectivo</option>
+                            </SelectInput>
                             <DataInput
                                 label='Nombre Comercial'
                                 name='nombreComercial'
@@ -61,14 +62,18 @@ export default function FormOne({next, data}) {
                                 label='RFC'
                                 name='rfc'
                                 type='text'
-                                placeholder='VECJ880326XXX '
+                                placeholder='VECJ880326XXX'
                             />
-                            <DataInput
-                                label='Régimen fiscal'
-                                name='regimenFiscal'
-                                type='text'
-                                placeholder='Régimen de Incorporación Fiscal'
-                            />
+                            <SelectInput label='Régimen fiscal' name='regimenFiscal'>
+                                <option value=''>Selecciona una razón social</option>
+                                <option value='regimenIncorporacionFiscal'>Régimen de Incorporación Fiscal RIF</option>
+                                <option value='actividadesEmpresariales'>Actividades empresariales</option>
+                                <option value='arrendamientosInmuebles'>Arrendamiento de inmuebles</option>
+                                <option value='serviciosProfesionales'>Servicios profesionales</option>
+                                <option value='asalariados'>Asalariados</option>
+                                <option value='regimenFiscalGeneral'>Régimen fiscal general</option>
+                                <option value='acumulacionIngresos'>Acumulación de ingresos</option>
+                            </SelectInput>
                             <DataInput
                                 label='Industria'
                                 name='industria'
@@ -78,7 +83,7 @@ export default function FormOne({next, data}) {
                             <DataInput
                                 label='Número de telefónico'
                                 name='numeroTelefonico'
-                                type='tel'
+                                type='text'
                                 placeholder='(123) 123-1234'
                             />
                             <DataInput

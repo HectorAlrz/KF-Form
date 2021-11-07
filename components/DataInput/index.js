@@ -5,7 +5,7 @@ import * as Yup from 'yup'
 const DataInput = ({ label, ...props }) => {
   const [field, meta] = useField(props)
   return (
-    <div className='w-280px md:w-408px hover:text-orange-k lg:w-539px my-5 flex flex-col flex-auto'>
+    <div className='w-280px md:w-408px hover:text-orange-kf lg:w-539px my-5 flex flex-col flex-auto'>
       <label
         className='peer text-md mb-1 text-gray-600 '
         htmlFor={props.id || props.name}

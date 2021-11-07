@@ -13,7 +13,7 @@ const FileInput = ({ label, ...props }) => {
         {label}
       </label>
       <input
-        className=' p-2 bg-white rounded border focus:ring-orange-kf focus:bg-white focus:shadow-xl'
+        className='h-30 p-2 bg-white rounded border focus:ring-orange-kf focus:bg-white focus:shadow-xl'
         {...field}
         {...props}
       />

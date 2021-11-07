@@ -69,13 +69,13 @@ export default function FormikForm() {
 
     // Sending Info to API
     const makeRequest = (formData) => {
-        alert(JSON.stringify(formData,null,2))
-      };
+        alert(JSON.stringify(formData, null, 2))
+    };
 
-    const handleNextPage = (newData, end = false) =>{
-        setData((prev) => ({...prev, ...newData}))
+    const handleNextPage = (newData, end = false) => {
+        setData((prev) => ({ ...prev, ...newData }))
 
-        if(end) {
+        if (end) {
             makeRequest(newData)
             return
         }
@@ -85,20 +85,23 @@ export default function FormikForm() {
     const handlePrevStep = (newData) => {
         setData((prev) => ({ ...prev, ...newData }));
         setCurrentPage((prev) => prev - 1);
-      };
-    
-      const pages = [
+    };
+
+    const pages = [
         <FormOne next={handleNextPage} data={data} />,
         <FormTwo next={handleNextPage} prev={handlePrevStep} data={data} />,
         <FormThree next={handleNextPage} prev={handlePrevStep} data={data} />,
         <FormFour next={handleNextPage} prev={handlePrevStep} data={data} />,
         <FinalForm next={handleNextPage} prev={handlePrevStep} data={data} />
-      ];
-      console.log('data',data)
+    ];
+    console.log('data', data)
 
     return (
         <>
-         <div className='flex justify-center mb-50px'>{pages[currentPage]}</div>
+            <div className='flex justify-center mb-50px'>
+                
+                {pages[currentPage]}
+            </div>
         </>
     )
 }
