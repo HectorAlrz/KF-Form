@@ -4,7 +4,7 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 
 // .: Form Schema
-import { finalFormSchema } from '../../pages/api/validations'
+import { finalForm } from '../../pages/api/validations'
 
 // .: Components
 import DataInput from '../../components/DataInput'
@@ -18,7 +18,7 @@ export default function FinalForm({ next, prev, data }) {
         <Formik
             initialValues={data}
             /* Validation Schema using Yup */
-            validationSchema={finalFormSchema}
+            validationSchema={finalForm}
 
             onSubmit={handlerSubmit}
         >
@@ -38,7 +38,7 @@ export default function FinalForm({ next, prev, data }) {
                             />
                             <DataInput
                                 label='Banco'
-                                name='banco'
+                                name='cuentaBancaria.banco'
                                 type='text'
                                 placeholder='Bancomer'
                             />

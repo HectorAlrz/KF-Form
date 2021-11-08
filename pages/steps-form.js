@@ -36,7 +36,7 @@ export default function FormikForm() {
         numeroTelefonico: '',
         email: '',
         representanteLegal: {
-            nombre: '',
+            nombreRepresentante: '',
             genero: '',
             fechaDeNacimiento: '',
             EntidadFederativaDeNacimiento: '',
@@ -69,21 +69,24 @@ export default function FormikForm() {
 
     // Sending Info to API
     const makeRequest = (formData) => {
+        console.log('to api',formData)
         alert(JSON.stringify(formData, null, 2))
     };
 
     const handleNextPage = (newData, end = false) => {
-        setData((prev) => ({ ...prev, ...newData }))
 
         if (end) {
             makeRequest(newData)
             return
-        }
+        } else {
+            setData((prev) => ({ ...prev, ...newData }))
         setCurrentPage((prev) => prev + 1)
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         })
+        }
+        
     }
 
     const handlePrevStep = (newData) => {
@@ -100,7 +103,7 @@ export default function FormikForm() {
         <FormTwo next={handleNextPage} prev={handlePrevStep} data={data} />,
         <FormThree next={handleNextPage} prev={handlePrevStep} data={data} />,
         <FormFour next={handleNextPage} prev={handlePrevStep} data={data} />,
-        <FinalForm next={handleNextPage} prev={handlePrevStep} data={data} />
+        <FinalForm next={handleNextPage} prev={handlePrevStep} data={data} />,
     ];
     console.log('data', data)
 

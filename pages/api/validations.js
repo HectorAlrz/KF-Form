@@ -115,10 +115,15 @@ export const formOneSchema = Yup.object({
     representanteLegal: Yup.object().shape({
         
       nombreRepresentante: Yup.string()
-          .min(5,'Este campo debe contener al menos 5 caracteres')
-          .max(80,'Este campo debe contener como máximo')
-          .required('Este campo es obligatorio'),
-      
+        .min(5,'Este campo debe contener al menos 5 caracteres')
+        .max(80,'Este campo debe contener como máximo')
+        .required('Este campo es obligatorio'),
+
+      nacionalidad: Yup.string()
+        .min(5,'Este campo debe contener al menos 5 caracteres')
+        .max(80,'Este campo debe contener como máximo')
+        .required('Este campo es obligatorio'),
+        
       genero: Yup.string()
         .oneOf(
           ['femenino','masculino', 'otro'])
@@ -156,6 +161,13 @@ export const formOneSchema = Yup.object({
       email: Yup.string()
         .email('Introduce un correo valido')
         .required('Este campo es necesario'),
+      
+      telefono: Yup.string()
+        .required('El número es necesario')
+        .matches(
+        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+        'Introduce solo números'
+        ),
     })
   })
 
@@ -216,7 +228,7 @@ export const formOneSchema = Yup.object({
   })
 
   export const finalForm = Yup.object({
-    representanteLegal: Yup.object().shape({
+    cuentaBancaria: Yup.object().shape({
 
       clabe: Yup.string()
         .min(18,'La CLABE debe contener al menos 18 caracteres')
@@ -225,7 +237,7 @@ export const formOneSchema = Yup.object({
       
       banco: Yup.string()
         .min(3,'Este campo necesita 3 caracteres o más')
-        .max(50,'ximo 50 caracteres')
+        .max(50,'Este campo necesita un maximo 50 caracteres')
         .required('Este campo es obligatorio'),
 
       })

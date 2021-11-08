@@ -56,6 +56,12 @@ export default function FormThree({ next, prev, data }) {
                                 placeholder='Veracruz'
                             />
                             <DataInput
+                                label='Nacionalidad'
+                                name='representanteLegal.nacionalidad'
+                                type='text'
+                                placeholder='Mexicana'
+                            />
+                            <DataInput
                                 label='Pais de nacimiento'
                                 name='representanteLegal.paisDeNacimiento'
                                 type='text'
@@ -84,6 +90,12 @@ export default function FormThree({ next, prev, data }) {
                                 type='email'
                                 name='representanteLegal.email'
                                 placeholder='tuEmail@email.com'
+                            />
+                            <DataInput
+                                label='Número de telefono'
+                                type='text'
+                                name='representanteLegal.telefono'
+                                placeholder='(123)-123-1234'
                             />
                             <FileInput
                                 label='Documento de identificación'
