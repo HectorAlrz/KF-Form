@@ -99,11 +99,11 @@ export default function FormikForm() {
     };
 
     const pages = [
-        <FormOne next={handleNextPage} data={data} />,
-        <FormTwo next={handleNextPage} prev={handlePrevStep} data={data} />,
-        <FormThree next={handleNextPage} prev={handlePrevStep} data={data} />,
-        <FormFour next={handleNextPage} prev={handlePrevStep} data={data} />,
-        <FinalForm next={handleNextPage} prev={handlePrevStep} data={data} />,
+        <FormOne key='1' next={handleNextPage} data={data} />,
+        <FormTwo key='2' next={handleNextPage} prev={handlePrevStep} data={data} />,
+        <FormThree key='3' next={handleNextPage} prev={handlePrevStep} data={data} />,
+        <FormFour key='4' next={handleNextPage} prev={handlePrevStep} data={data} />,
+        <FinalForm key='5' next={handleNextPage} prev={handlePrevStep} data={data} />,
     ];
     console.log('data', data)
 
