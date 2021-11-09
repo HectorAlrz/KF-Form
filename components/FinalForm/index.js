@@ -27,9 +27,10 @@ export default function FinalForm({ next, prev, data }) {
                     <div className='flex justify-center mb-50px'>
                         <div className=''>
                             {/* Section 3 */}
-                            <div className='mt-10 mb-50px border-b-2 border-orange-kf'>
+                            <div className='mt-10 mb-5 border-b-2 border-orange-kf shadow-xl'>
                                 <h3 className='text-center text-2xl'>Cuenta bancaria</h3>
                             </div>
+                            <div className='bg-gray-100 p-1 rounded border shadow-xl'>
                             <DataInput
                                 label='CLABE'
                                 name='cuentaBancaria.clabe'
@@ -42,6 +43,7 @@ export default function FinalForm({ next, prev, data }) {
                                 type='text'
                                 placeholder='Bancomer'
                             />
+                            </div>
                             <div className='flex flex-col sm:flex-row sm:justify-between mt-50px sm:w-280px md:w-408px lg:w-539px'>
                                 <button
                                     type='button'

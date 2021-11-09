@@ -109,7 +109,7 @@ export default function FormikForm() {
 
     return (
         <>
-            <div className='flex justify-center mb-50px'>
+            <div className='flex justify-center mb-50px w-auto'>
                 
                 {pages[currentPage]}
             </div>
