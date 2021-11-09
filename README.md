@@ -5,7 +5,7 @@
 * Formik
 * Yup
 
-### Proyecto 2
+### Proyecto 2 (En construcción)
 * React
 * Tailwind
 * React hooks form
