@@ -8,7 +8,7 @@ const DataInput = ({ label, ...props }) => {
     <>
     <div className='h-auto w-280px md:w-408px hover:text-orange-kf lg:w-539px my-5 flex flex-col flex-auto'>
       <label
-        className='peer text-md mb-1 text-gray-600 '
+        className='peer text-md mb-1 text-gray-700 '
         htmlFor={props.id || props.name}
       >
         {label}
