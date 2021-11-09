@@ -32,7 +32,7 @@ export default function FormOne({next, data}) {
                                 <h3 className=' text-center text-2xl'>Datos de Empresa</h3>
                             </div>
 
-                            <SelectInput label='Razón socal' name='razonSocial'>
+                            <SelectInput label='Razón social' name='razonSocial'>
                                 <option value=''>Selecciona una razón social</option>
                                 <option value='sociedadAnonima'>Sociedad Anónima S.A.</option>
                                 <option value='sociedadDeResponsabilidadLimitada'>Sociedad de Responsabilidad Limitada S. de R.L.</option>
