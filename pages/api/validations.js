@@ -168,6 +168,8 @@ export const formOneSchema = Yup.object({
         /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
         'Introduce solo números'
         ),
+      
+      
     })
   })
 
@@ -223,6 +225,7 @@ export const formOneSchema = Yup.object({
           .min(5,'Este campo debe contener al menos 5 caracteres')
           .max(25,'Este campo debe contener como máximo')
           .required('Este campo es obligatorio'),
+        
         })
     })
   })

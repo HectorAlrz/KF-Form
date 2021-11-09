@@ -29,7 +29,7 @@ export default function FormFour({ next, prev, data }) {
                         <div className=''>
                             {/* Section 3 */}
                             <div className='mt-10 mb-50px border-b-2 border-orange-kf'>
-                                <h3 className=' text-center text-2xl'>Domicilio Representante Legal</h3>
+                                <h3 className=' text-center text-xl'>Domicilio Representante Legal</h3>
                             </div>
                             <DataInput
                                 label='Calle o Avenida'
@@ -78,11 +78,6 @@ export default function FormFour({ next, prev, data }) {
                                 name='representanteLegal.domicilio.pais'
                                 type='text'
                                 placeholder='México'
-                            />
-                            <FileInput
-                                label='Comprobante de domicilio'
-                                name='representanteLegal.comprobanteDeDomicilio'
-                                type='file'
                             />
                             <div className='flex flex-col sm:flex-row sm:justify-between mt-50px sm:w-280px md:w-408px lg:w-539px'>
                                 <button

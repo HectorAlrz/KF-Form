@@ -40,7 +40,7 @@ export default function FormThree({ next, prev, data }) {
                             />
                             <SelectInput label='Genero' name='representanteLegal.genero'>
                                 <option value=''>Selecciona un genero</option>
-                                <option value='femenino'>Femenino</option>
+                                <option selected value='femenino'>Femenino</option>
                                 <option value='masculino'>Masculino</option>
                                 <option value='otro'>Otro</option>
                             </SelectInput>
