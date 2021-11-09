@@ -127,7 +127,7 @@ export const formOneSchema = Yup.object({
       genero: Yup.string()
         .oneOf(
           ['femenino','masculino', 'otro'])
-        .required('Se necesita el régimen fiscal.'),
+        .required('Se necesita el genero.'),
       
       fechaDeNacimiento: Yup.date()
         .max(new Date(new Date().setDate(new Date().getDate() - 6570)),'Debe ser mayor de edad')
