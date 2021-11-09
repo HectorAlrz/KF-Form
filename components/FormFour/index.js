@@ -28,9 +28,11 @@ export default function FormFour({ next, prev, data }) {
                     <div className='flex justify-center mb-50px'>
                         <div className=''>
                             {/* Section 3 */}
-                            <div className='mt-10 mb-50px border-b-2 border-orange-kf'>
+                            <div className='mt-10 mb-5 border-b-2 border-orange-kf shadow-xl'>
                                 <h3 className=' text-center text-xl'>Domicilio Representante Legal</h3>
                             </div>
+                            <div className='bg-gray-100 p-1 rounded border shadow-xl'>
+
                             <DataInput
                                 label='Calle o Avenida'
                                 name='representanteLegal.domicilio.calle'
@@ -79,6 +81,7 @@ export default function FormFour({ next, prev, data }) {
                                 type='text'
                                 placeholder='México'
                             />
+                            </div>
                             <div className='flex flex-col sm:flex-row sm:justify-between mt-50px sm:w-280px md:w-408px lg:w-539px'>
                                 <button
                                     type='button'

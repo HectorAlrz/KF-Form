@@ -26,12 +26,12 @@ export default function FormOne({next, data}) {
             {()=> (
                 <Form>
                     <div className='flex justify-center mb-50px'>
-                        <div className=''>
+                        <div>
                             {/* Section 1 */}
-                            <div className='mt-10 mb-50px border-b-2 border-orange-kf'>
+                            <div className='mt-10 mb-5 border-b-2 border-orange-kf shadow-xl'>
                                 <h3 className=' text-center text-2xl'>Datos de Empresa</h3>
                             </div>
-
+                            <div className='bg-gray-50 p-1 rounded border shadow-xl'>
                             <SelectInput label='Razón social' name='razonSocial'>
                                 <option value=''>Selecciona una razón social</option>
                                 <option value='sociedadAnonima'>Sociedad Anónima S.A.</option>
@@ -92,7 +92,7 @@ export default function FormOne({next, data}) {
                                 type='email'
                                 placeholder='tuEmail@email.com'
                             />
-                            
+                            </div>
                             <div className='mt-50px'>
                                 <button type='submit'className='bg-orange-kf hover:bg-orange-hover mr-1 w-280px md:w-408px lg:w-539px h-30px mb-1 hover:bg-orange-600 text-white font-normal rounded'>
                                     Siguiente

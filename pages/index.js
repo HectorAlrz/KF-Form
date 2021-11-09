@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
 
+import { useRouter } from 'next/router'
 export default function Home() {
+  const router = useRouter()
   return (
     <>
       <head>
@@ -21,11 +22,9 @@ export default function Home() {
               <p className="mt-2 mb-4 text-blueGray-500">
                 A form created using Formik, Yup and Tailwindcss.
               </p>
-              <Link passHref='/steps-form'>
-              <button className='bg-orange-kf hover:bg-orange-hover mr-1 w-280px h-30px mb-1 text-white font-normal rounded'>
+              <button onClick={() => router.push('/steps-form')} className='bg-orange-kf hover:bg-orange-hover mr-1 w-280px h-30px mb-1 text-white font-normal rounded'>
                 Go to form
               </button>
-              </Link>
             </div>
           </div>
         </div>
